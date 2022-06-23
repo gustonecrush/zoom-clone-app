@@ -6,14 +6,14 @@ import Header from "../components/Header";
 import MenuButtons from "../components/MenuButtons";
 import SearchBar from "../components/SearchBar";
 
-const HomeScreen = () => {
+const HomeScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <StatusBar style="light"></StatusBar>
-      <SafeAreaView style={{ height: '100%' }}>
+      <SafeAreaView style={{ height: "100%" }}>
         <Header />
         <SearchBar />
-        <MenuButtons />
+        <MenuButtons navigation={navigation} />
         <ContactsMenu />
       </SafeAreaView>
     </View>

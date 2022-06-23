@@ -41,7 +41,7 @@ const ContactsMenu = () => {
       <ScrollView showsVerticalScrollIndicator={false} vertical>
         {/* Contact Container */}
         {contactsMenuButtons.map((contact, index) => (
-          <View style={styles.row}>
+          <View style={styles.row} key={index}>
             {/* Image */}
             {contact.type === "starred" ? (
               <View style={styles.starredIcon}>

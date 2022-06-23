@@ -3,13 +3,22 @@ import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
 
 const items = [
-  { id: 1, name: "video-camera", title: "New Meeting", customColor: "#FF7215" },
+  {
+    id: 1,
+    name: "video-camera",
+    title: "New Meeting",
+    customColor: "#FF7215",
+  },
   { id: 2, name: "plus-square", title: "Join" },
   { id: 3, name: "calendar", title: "Schedule" },
   { id: 4, name: "upload", title: "Share Screen" },
 ];
 
-const MenuButtons = () => {
+const MenuButtons = ({ navigation }) => {
+  const openMeeting = () => {
+    navigation.navigate('Room');
+  };
+
   return (
     <View style={styles.container}>
       {items.map((item, index) => (
@@ -19,6 +28,7 @@ const MenuButtons = () => {
               ...styles.button,
               backgroundColor: item.customColor ? item.customColor : "#0470DC",
             }}
+            onPress={() => openMeeting()}
           >
             <FontAwesome name={item.name} size={23} color="#EFEFEF" />
           </TouchableOpacity>
